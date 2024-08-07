@@ -12,7 +12,7 @@ const CoverPage  = () =>  {
             <header>
 
                  <div className=' container flex flex-wrap items-center justify-between py-8  px-8 '>
-                 <a href=''>
+                 <a href='#Home'>
                     <div className='flex items-center border-2 border-x-purple-800 border-y-violet-200'>
                         
                            <h1 className=' font-bold text-4xl bg-gradient-to-r from-violet-500 to-fuchsia-500'> Elite    </h1>  
@@ -29,10 +29,10 @@ const CoverPage  = () =>  {
                             
                           <ul className="flex space-x-2 items-center justify-between">
                             <li className="text-white hover:bg-purple-500 px-4 py-2 rounded transition duration-200">
-                              <a href="#" className="hover:underline">Movies</a>
+                              <a href="#Movies" className="hover:underline">Movies</a>
                                 </li>
                           <li className="text-white hover:bg-purple-500 px-4 py-2 rounded transition duration-200">
-                       <a href="#" className="hover:underline">Series</a>
+                       <a href="#Series" className="hover:underline">Series</a>
                            </li>
                            <div className='ps-20 '>
                            <a href="#" className="">

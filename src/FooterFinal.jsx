@@ -4,7 +4,7 @@ const FooterFinal = () => {
   return (
     <div className='flex bg-gray-400 h-20 space-x-96 '>
             <div className=' py-4 pl-12'>
-            <a href='' className=''>
+            <a href='#Home' className=''>
                     <div className='flex hover:bg-purple-500 rounded-lg items-center border-2 border-x-purple-800 border-y-violet-200'>
                         
                            <h1 className=' font-bold text-4xl '> Elite    </h1>  
@@ -19,10 +19,10 @@ const FooterFinal = () => {
             </div>
             
             <div className='py-6 flex space-x-14 '>
-              <a href='#' className='hover:bg-purple-500 rounded-lg'>
+              <a href='#Movies' className='hover:bg-purple-500 rounded-lg'>
                 MOVIES 
               </a>
-              <a href='#' className='hover:bg-purple-500 rounded-lg'>
+              <a href='#Series' className='hover:bg-purple-500 rounded-lg'>
                 SERIES
               </a>
             </div>
