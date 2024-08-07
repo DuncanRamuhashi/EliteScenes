@@ -10,6 +10,7 @@ import MoviePage from './MoviePage';
 import SeriesPage from './SeriesPage';
 import ViewerPage from './ViewerPage';
 import AddingPage from './AddingPage';
+
 function App() {
  
 
@@ -20,23 +21,28 @@ function App() {
        
        
       <Router>
+        <section id="Home"><CoverPage/></section>
         <Routes>
+          
+          <Route  path="/MoviePage" element={<MoviePage/>}/>
+          <Route  path="/SeriesPage" element={<SeriesPage/>}/>
+          <Route  path="/ViewerPage" element={<ViewerPage/>}/>
+          <Route  path="/AddingPage" element={<AddingPage/>}/>
+          
             <Route
                path="*"
                element={
                 <>
-                   <section id="Home"><CoverPage/></section>
+                  
                    <section id="Movies"><LatestMovies/></section>
                    <section id="Series"><LatestSeries/></section>
-                   <section id=""><FooterFinal/></section>
-                   <section id=""><MoviePage/></section>
-                   <section id=""><SeriesPage/></section>
-                   <section id=""><ViewerPage/></section>
-                   <section id=""><AddingPage/></section>
+                  
+                   
                 </>
                }
             />
         </Routes>
+        <section id=""><FooterFinal/></section>
       </Router>
     </>
   )

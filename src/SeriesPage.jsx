@@ -10,11 +10,20 @@ import se8 from './Images/se8.png'
 import se9 from './Images/se9.jpg'
 import se10 from './Images/se10.png'
 import se11 from './Images/se11.jpg'
+import { useNavigate } from 'react-router-dom';
 const SeriesPage = () => {
+    const navigate = useNavigate();
+  
+    const goToAddPage= () => {
+      navigate('/AddingPage');
+    }
+    const goToViewerPage = () => {
+        navigate('/ViewerPage');
+      }
   return (
     <div className='justify-center   '>
          <div className='justify-end justify-items-end flex  pr-20 py-7'>
-       <a className='' href='#'>
+       <a className='' onClick={goToAddPage}>
           <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>ADD</button>
          </a>
        </div>
@@ -25,14 +34,14 @@ const SeriesPage = () => {
       <div className='flex  flex-col py-2 px-52'>
       <div className=' flex grid grid-cols-4 gap-y-4  py-8  justify-center  justify-items-center '>
     <div className="snap-start flex-shrink-0 ">
-    <a>
+    <a onClick={goToViewerPage} href='' >
         <img src={se1} alt='Series' className='w-48 h-64 object-cover'>
         </img>
         </a> 
     
     </div>
     <div className="snap-start flex-shrink-0   ">
-     <a>
+     <a onClick={goToViewerPage} href=''>
         <img src={se2} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
@@ -40,7 +49,7 @@ const SeriesPage = () => {
           
         </div>
         <div className="snap-start flex-shrink-0 ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se3} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
@@ -49,7 +58,7 @@ const SeriesPage = () => {
         </div>
         <div className="snap-start flex-shrink-0    ">
         
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se4} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
@@ -58,14 +67,14 @@ const SeriesPage = () => {
 
         <div className="snap-start flex-shrink-0   ">
         
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se5} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
         </a> 
         </div>
         <div className="snap-start flex-shrink-0  ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se6} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
@@ -73,7 +82,7 @@ const SeriesPage = () => {
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se7} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
@@ -81,7 +90,7 @@ const SeriesPage = () => {
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se8} alt='Series' className='w-48 h-64 object-cover'>
         </img>
         </a> 
@@ -89,28 +98,28 @@ const SeriesPage = () => {
         </div>
 
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se9} alt='Series' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se10} alt='Series' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se11} alt='Series' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se2} alt='Series' className='w-48 h-64 object-cover'>
         </img>
         </a> 

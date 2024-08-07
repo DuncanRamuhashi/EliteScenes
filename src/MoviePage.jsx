@@ -15,11 +15,20 @@ import mov13 from './Images/mov13.png'
 import mov14 from './Images/mov14.png'
 import mov15 from './Images/mov15.png'
 import mov16 from './Images/mov16.png'
+import { useNavigate } from 'react-router-dom';
 const MoviePage = () => {
+    const navigate = useNavigate();
+  
+    const goToAddPage= () => {
+      navigate('/AddingPage');
+    }
+    const goToViewerPage = () => {
+        navigate('/ViewerPage');
+      }
   return (
     <div className='justify-center   '>
       <div className='justify-end justify-items-end flex  pr-20 py-7'>
-       <a className='' href='#'>
+       <a className='' onClick={goToAddPage}>
           <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>ADD</button>
          </a>
        </div>
@@ -29,14 +38,14 @@ const MoviePage = () => {
       <div className='flex  flex-col py-2 px-52'>
       <div className=' flex grid grid-cols-4 gap-y-4  py-8  justify-center  justify-items-center '>
     <div className="snap-start flex-shrink-0 ">
-    <a>
+    <a onClick={goToViewerPage} href=''>
         <img src={mov1} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 
     
     </div>
     <div className="snap-start flex-shrink-0   ">
-     <a>
+     <a onClick={goToViewerPage} href=''>
         <img src={mov2} alt='mov1' className='w-48 h-64 object-cover'>
         
         </img>
@@ -44,7 +53,7 @@ const MoviePage = () => {
           
         </div>
         <div className="snap-start flex-shrink-0 ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov8} alt='mov1' className='w-48 h-64 object-cover'>
         
         </img>
@@ -53,7 +62,7 @@ const MoviePage = () => {
         </div>
         <div className="snap-start flex-shrink-0    ">
         
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov3} alt='mov1' className='w-48 h-64 object-cover'>
         
         </img>
@@ -62,14 +71,14 @@ const MoviePage = () => {
 
         <div className="snap-start flex-shrink-0   ">
         
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov4} alt='mov1' className='w-48 h-64 object-cover'>
         
         </img>
         </a> 
         </div>
         <div className="snap-start flex-shrink-0  ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov5} alt='mov1' className='w-48 h-64 object-cover'>
         
         </img>
@@ -77,7 +86,7 @@ const MoviePage = () => {
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov6} alt='mov1' className='w-48 h-64 object-cover'>
         
         </img>
@@ -85,69 +94,69 @@ const MoviePage = () => {
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov7} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov8} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov8} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov9} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov10} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov11} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov12} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>       <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov13} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov14} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={mov15} alt='mov1' className='w-48 h-64 object-cover'>
         </img>
         </a> 

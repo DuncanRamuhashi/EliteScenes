@@ -10,7 +10,16 @@ import se8 from './Images/se8.png'
 import se9 from './Images/se9.jpg'
 import se10 from './Images/se10.png'
 import se11 from './Images/se11.jpg'
+import { useNavigate } from 'react-router-dom';
 const LatestSeries = () => {
+  const navigate = useNavigate();
+  
+  const goToSeries= () => {
+    navigate('/SeriesPage');
+  }
+  const goToViewerPage = () => {
+    navigate('/ViewerPage');
+  }
   return (
     <div className='justify-center   '>
     <h1 className=' pt-14 text-lg text-center'> LATEST SERIES </h1>
@@ -20,14 +29,14 @@ const LatestSeries = () => {
       <div className='flex  flex-col py-2 px-52'>
       <div className=' flex grid grid-cols-4 gap-y-4  py-8  justify-center  justify-items-center '>
     <div className="snap-start flex-shrink-0 ">
-    <a>
+    <a onClick={goToViewerPage} href=''>
         <img src={se1} alt='Series' className='w-48 h-64 object-cover'>
         </img>
         </a> 
     
     </div>
     <div className="snap-start flex-shrink-0   ">
-     <a>
+     <a onClick={goToViewerPage} href=''>
         <img src={se2} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
@@ -35,7 +44,7 @@ const LatestSeries = () => {
           
         </div>
         <div className="snap-start flex-shrink-0 ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se3} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
@@ -44,7 +53,7 @@ const LatestSeries = () => {
         </div>
         <div className="snap-start flex-shrink-0    ">
         
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se4} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
@@ -53,14 +62,14 @@ const LatestSeries = () => {
 
         <div className="snap-start flex-shrink-0   ">
         
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se5} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
         </a> 
         </div>
         <div className="snap-start flex-shrink-0  ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se6} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
@@ -68,7 +77,7 @@ const LatestSeries = () => {
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se7} alt='Series' className='w-48 h-64 object-cover'>
         
         </img>
@@ -76,7 +85,7 @@ const LatestSeries = () => {
          
         </div>
         <div className="snap-start flex-shrink-0   ">
-        <a>
+        <a onClick={goToViewerPage} href=''>
         <img src={se8} alt='Series' className='w-48 h-64 object-cover'>
         </img>
         </a> 
@@ -91,7 +100,7 @@ const LatestSeries = () => {
 
     </div> 
        <div className='justify-end justify-items-end flex  pr-20'>
-       <a className='' href='#'>
+       <a className='' onClick={goToSeries}>
           <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>More</button>
          </a>
        </div>

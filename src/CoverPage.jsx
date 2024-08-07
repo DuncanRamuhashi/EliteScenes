@@ -1,9 +1,10 @@
 import EliteSceneCover from './assets/EliteSceneCover.jpg';
-
+import { useNavigate } from 'react-router-dom';
 
 import React from 'react';
 
 const CoverPage  = () =>  {
+
   return (
     <div className=' flex '>
         <div className='relative  from-transparent  bg-top  h-96 w-screen bg-no-repeat' style={{ backgroundImage: `url(${EliteSceneCover})`
@@ -12,7 +13,7 @@ const CoverPage  = () =>  {
             <header>
 
                  <div className=' container flex flex-wrap items-center justify-between py-8  px-8 '>
-                 <a href='#Home'>
+                 <a  href='/'>
                     <div className='flex items-center border-2 border-x-purple-800 border-y-violet-200'>
                         
                            <h1 className=' font-bold text-4xl bg-gradient-to-r from-violet-500 to-fuchsia-500'> Elite    </h1>  
