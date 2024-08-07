@@ -1,6 +1,15 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom';
 const FooterFinal = () => {
+  const navigate = useNavigate();
+  const goToSeries= () => {
+    navigate('/SeriesPage');
+  }
+ 
+  
+  const goToMovies = () => {
+    navigate('/MoviePage');
+  }
   return (
     <div className='flex bg-gray-400 h-20 space-x-96 '>
             <div className=' py-4 pl-12'>
@@ -19,10 +28,10 @@ const FooterFinal = () => {
             </div>
             
             <div className='py-6 flex space-x-14 '>
-              <a href='#Movies' className='hover:bg-purple-500 rounded-lg'>
+              <a href='' onClick={goToMovies} className='hover:bg-purple-500 rounded-lg'>
                 MOVIES 
               </a>
-              <a href='#Series' className='hover:bg-purple-500 rounded-lg'>
+              <a href='' onClick={goToSeries} className='hover:bg-purple-500 rounded-lg'>
                 SERIES
               </a>
             </div>

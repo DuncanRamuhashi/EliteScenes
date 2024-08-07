@@ -4,7 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import React from 'react';
 
 const CoverPage  = () =>  {
-
+  const navigate = useNavigate();
+  const goToSeries= () => {
+    navigate('/SeriesPage');
+  }
+ 
+  
+  const goToMovies = () => {
+    navigate('/MoviePage');
+  }
   return (
     <div className=' flex '>
         <div className='relative  from-transparent  bg-top  h-96 w-screen bg-no-repeat' style={{ backgroundImage: `url(${EliteSceneCover})`
@@ -30,10 +38,10 @@ const CoverPage  = () =>  {
                             
                           <ul className="flex space-x-2 items-center justify-between">
                             <li className="text-white hover:bg-purple-500 px-4 py-2 rounded transition duration-200">
-                              <a href="#Movies" className="hover:underline">Movies</a>
+                              <a href="" onClick={goToMovies}  className="hover:underline">Movies</a>
                                 </li>
                           <li className="text-white hover:bg-purple-500 px-4 py-2 rounded transition duration-200">
-                       <a href="#Series" className="hover:underline">Series</a>
+                       <a href="" onClick={goToSeries} className="hover:underline">Series</a>
                            </li>
                            <div className='ps-20 '>
                            <a href="#" className="">
