@@ -1,17 +1,109 @@
 import React from 'react'
+import mov1 from './Images/mov1.png'
+import mov2 from './Images/mov2.png'
+import mov3 from './Images/mov3.png'
+import mov4 from './Images/mov4.png'
+import mov5 from './Images/mov5.png'
+import mov6 from './Images/mov6.png'
+import mov7 from './Images/mov7.png'
+import mov8 from './Images/mov8.png'
+import mov9 from './Images/mov9.png'
+import mov10 from './Images/mov10.png'
+import mov11 from './Images/mov11.png'
+import mov12 from './Images/mov12.jpg'
+import mov13 from './Images/mov13.png'
+import mov14 from './Images/mov14.png'
+import mov15 from './Images/mov15.png'
+import mov16 from './Images/mov16.png'
+
 
 const LatestMovies = () => {
   return (
-    <div className='justify-center  flex-col  '>
-        <h1 className=' pt-14 text-lg'> LATEST MOVIES </h1>
+    <div className='justify-center   '>
+        <h1 className=' pt-14 text-lg text-center'> LATEST MOVIES </h1>
 
-        <div className='grid grid-cols-4  grid-rows-4 gap-4'>
-        <div className="snap-start flex-shrink-0 space-y-2  border-zinc-800 px-8 py-8 ">
 
-          
+       
+          <div className='flex  flex-col py-2 px-52'>
+          <div className=' flex grid grid-cols-4 gap-y-4  py-8  justify-center  justify-items-center '>
+        <div className="snap-start flex-shrink-0 ">
+        <a>
+            <img src={mov1} alt='mov1' className='w-48 h-64 object-cover'>
+            </img>
+            </a> 
+        
         </div>
-        </div>
+        <div className="snap-start flex-shrink-0   ">
+         <a>
+            <img src={mov2} alt='mov1' className='w-48 h-64 object-cover'>
+            
+            </img>
+         </a> 
+              
+            </div>
+            <div className="snap-start flex-shrink-0 ">
+            <a>
+            <img src={mov8} alt='mov1' className='w-48 h-64 object-cover'>
+            
+            </img>
+            </a> 
+             
+            </div>
+            <div className="snap-start flex-shrink-0    ">
+            
+            <a>
+            <img src={mov3} alt='mov1' className='w-48 h-64 object-cover'>
+            
+            </img>
+            </a> 
+            </div>
 
+            <div className="snap-start flex-shrink-0   ">
+            
+            <a>
+            <img src={mov4} alt='mov1' className='w-48 h-64 object-cover'>
+            
+            </img>
+            </a> 
+            </div>
+            <div className="snap-start flex-shrink-0  ">
+            <a>
+            <img src={mov5} alt='mov1' className='w-48 h-64 object-cover'>
+            
+            </img>
+            </a> 
+             
+            </div>
+            <div className="snap-start flex-shrink-0   ">
+            <a>
+            <img src={mov6} alt='mov1' className='w-48 h-64 object-cover'>
+            
+            </img>
+            </a> 
+             
+            </div>
+            <div className="snap-start flex-shrink-0   ">
+            <a>
+            <img src={mov7} alt='mov1' className='w-48 h-64 object-cover'>
+            </img>
+            </a> 
+             
+            </div>
+
+
+
+
+
+
+
+        </div> 
+           <div className='justify-end justify-items-end flex  pr-20'>
+           <a className='' href='#'>
+              <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>More</button>
+             </a>
+           </div>
+             
+          </div>
     </div>
   )
 }
