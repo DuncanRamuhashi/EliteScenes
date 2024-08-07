@@ -4,10 +4,11 @@ const AddingPage = () => {
   return (
 <div className='py-20  flex justify-center justify-items-center'>   
       <div className="snap-start flex-shrink-0  px-20   ">
-    <a>
+    <a >
        <img src=" " alt='Upload Movie Poster' className='w-80 h-96 object-cover text-center bg-gray-400'>
-       
+         
        </img>
+       
     </a> 
          
        </div> 
