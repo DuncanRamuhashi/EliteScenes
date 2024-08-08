@@ -20,7 +20,7 @@ const AddingPage = () => {
         <input
          className='px-4 py-2 ring-2 ring-gray-400 w-80 bg-white rounded-lg placeholder-zinc-400'
           placeholder="Movie/Series name"
-               required
+               required 
              />
          </div>
         </div>
@@ -68,6 +68,9 @@ const AddingPage = () => {
                 <label>Series</label>
             </div> 
         </div>
+        <a className='' href='#'>
+          <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-80 text-center '>SAVE</button>
+         </a>
        </div>
       
        
