@@ -11,15 +11,35 @@ import se9 from './Images/se9.jpg'
 import se10 from './Images/se10.png'
 import se11 from './Images/se11.jpg'
 import { useNavigate } from 'react-router-dom';
+import { useState,useEffect } from 'react';
 const SeriesPage = () => {
     const navigate = useNavigate();
   
     const goToAddPage= () => {
       navigate('/AddingPage');
     }
+
     const goToViewerPage = () => {
         navigate('/ViewerPage');
       }
+
+        //Sceene listings
+    const [sceneList, setSceneList] =  useState([]);
+  
+    
+     useEffect(() => {
+     const fetchlist = async () => {
+      try {
+        const res = await fetch('http://localhost:8000/FakeDB');
+        const data = await res.json();
+        setSceneList(data);
+      } catch (error) {
+        console.error('There was an error fetching data', error);
+      }
+    };
+    fetchlist();
+  }, [])
+
   return (
     <div className='justify-center   '>
          <div className='justify-end justify-items-end flex  pr-20 py-7'>
@@ -33,100 +53,19 @@ const SeriesPage = () => {
    
       <div className='flex  flex-col py-2 px-52'>
       <div className=' flex grid grid-cols-4 gap-y-4  py-8  justify-center  justify-items-center '>
-    <div className="snap-start flex-shrink-0 ">
-    <a onClick={goToViewerPage} href='' >
-        <img src={se1} alt='Series' className='w-48 h-64 object-cover'>
-        </img>
-        </a> 
-    
-    </div>
-    <div className="snap-start flex-shrink-0   ">
-     <a onClick={goToViewerPage} href=''>
-        <img src={se2} alt='Series' className='w-48 h-64 object-cover'>
-        
-        </img>
-     </a> 
-          
-        </div>
-        <div className="snap-start flex-shrink-0 ">
-        <a onClick={goToViewerPage} href=''>
-        <img src={se3} alt='Series' className='w-48 h-64 object-cover'>
-        
-        </img>
-        </a> 
-         
-        </div>
-        <div className="snap-start flex-shrink-0    ">
-        
-        <a onClick={goToViewerPage} href=''>
-        <img src={se4} alt='Series' className='w-48 h-64 object-cover'>
-        
-        </img>
-        </a> 
-        </div>
+   
 
-        <div className="snap-start flex-shrink-0   ">
-        
-        <a onClick={goToViewerPage} href=''>
-        <img src={se5} alt='Series' className='w-48 h-64 object-cover'>
-        
-        </img>
-        </a> 
-        </div>
-        <div className="snap-start flex-shrink-0  ">
-        <a onClick={goToViewerPage} href=''>
-        <img src={se6} alt='Series' className='w-48 h-64 object-cover'>
-        
-        </img>
-        </a> 
-         
-        </div>
-        <div className="snap-start flex-shrink-0   ">
-        <a onClick={goToViewerPage} href=''>
-        <img src={se7} alt='Series' className='w-48 h-64 object-cover'>
-        
-        </img>
-        </a> 
-         
-        </div>
-        <div className="snap-start flex-shrink-0   ">
-        <a onClick={goToViewerPage} href=''>
-        <img src={se8} alt='Series' className='w-48 h-64 object-cover'>
-        </img>
-        </a> 
-         
-        </div>
+                  {sceneList.map(param => ( 
 
-        <div className="snap-start flex-shrink-0   ">
-        <a onClick={goToViewerPage} href=''>
-        <img src={se9} alt='Series' className='w-48 h-64 object-cover'>
-        </img>
-        </a> 
-         
-        </div>
-        <div className="snap-start flex-shrink-0   ">
-        <a onClick={goToViewerPage} href=''>
-        <img src={se10} alt='Series' className='w-48 h-64 object-cover'>
-        </img>
-        </a> 
-         
-        </div>
-        <div className="snap-start flex-shrink-0   ">
-        <a onClick={goToViewerPage} href=''>
-        <img src={se11} alt='Series' className='w-48 h-64 object-cover'>
-        </img>
-        </a> 
-         
-        </div>
-        <div className="snap-start flex-shrink-0   ">
-        <a onClick={goToViewerPage} href=''>
-        <img src={se2} alt='Series' className='w-48 h-64 object-cover'>
-        </img>
-        </a> 
-         
-        </div>
+                   param.category == "Series" ? <div className='snap-start flex-shrink-0 ' key={param.id}>
+       
+                  <a onClick={goToViewerPage} href=''>
+                                   <img src={param.image} alt='scene' className='w-48 h-64 object-cover' />
+                     </a> 
 
+                 </div>: ""
 
+))}
 
 
 

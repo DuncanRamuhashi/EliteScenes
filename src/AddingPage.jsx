@@ -1,5 +1,6 @@
 import React from 'react';
 import FakeDB  from './FakeDB';
+import { v4 as uuidv4 } from 'uuid'; 
 import  {useState, useEffect} from 'react';
 
 const AddingPage = () => {
@@ -9,15 +10,16 @@ const AddingPage = () => {
    const [year,setYear] = useState('');
    const [category,setCategory] = useState('');
    const [image,setImage] = useState('');
-   const [id,setID] = useState(null);
+   const [id,setID] = useState('');
    const [uploadImage,setUploadImage] = useState(null);
     
    const generateRandomId = () => {
-      return Math.floor(Math.random() * 100000) + 1;
+      return Math.floor(Math.random() * 1000000) + 1;
     }
     
    const handleImageChange = (e) => {
       const file = e.target.files[0];
+     
       if(file) {
          const reader = new FileReader();
          reader.onloadend = () => {
@@ -25,19 +27,18 @@ const AddingPage = () => {
          
 
             setImage(reader.result);
-          
+             
          };
-         reader.readAsDataURL(file);
 
-         
+         reader.readAsDataURL(file);
+          
       }
    }
 
    const submitData = async () => {
-      const newID =generateRandomId;
-      setID(newID);
+
       const newData = {
-         id ,
+         id: Math.floor(Math.random() * 1000000) + 1,
          name,
          description,
          country,
@@ -145,9 +146,12 @@ const AddingPage = () => {
              />
          </div>
         </div>
+        <h1 className=' '>Category</h1>
+
          <select id='category' 
                    value={category}      
                    onChange={(e) => setCategory(e.target.value)}>
+                     <option value='...'>....</option>
                      <option value='Movies'>Movie</option>
                      <option value='Series'>Series</option>
 
