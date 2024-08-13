@@ -2,7 +2,7 @@ import React from 'react'
 import mov2 from './Images/mov2.png'
 import { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 const ViewerPage = () => {
    // retrieve id from URL
    const { idProper } = useParams();
@@ -10,7 +10,10 @@ const ViewerPage = () => {
   //scenes listings
   const [sceneList, setSceneList] =  useState([]);
   
-    
+  const navigate = useNavigate();
+  const goToEditPage= () => {
+    navigate(`/EditPage/${idProper}`);
+  }
   useEffect(() => {
    const fetchlist = async () => {
      try {
@@ -70,7 +73,7 @@ const ViewerPage = () => {
 
 
                  <div className='space-x-10  '>
-                   <a className='' href='#'>
+                   <a className='' href='#' onClick={goToEditPage}>
                      <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>EDIT</button>
                    </a>
                    <a className='' href='#'>

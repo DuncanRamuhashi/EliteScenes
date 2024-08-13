@@ -31,7 +31,7 @@ const LatestSeries = () => {
   useEffect(() => {
   const fetchlist = async () => {
    try {
-     const res = await fetch('http://localhost:8000/FakeDB');
+     const res = await fetch('http://localhost:8000/FakeDB?category=Series');
      const data = await res.json();
         
          setSceneList(data);
@@ -50,7 +50,7 @@ const LatestSeries = () => {
     <div className='flex flex-col py-2 px-4 sm:px-8 md:px-20 lg:px-52'>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 py-8 justify-items-center'>
         
-            {sceneList.map(param => (
+            {sceneList.slice(0,9).map(param => (
                 param.category === "Series" ? (
                     <div className='snap-start flex-shrink-0' key={param.id}>
                         <a onClick={(e) => {

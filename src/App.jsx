@@ -10,6 +10,7 @@ import MoviePage from './MoviePage';
 import SeriesPage from './SeriesPage';
 import ViewerPage from './ViewerPage';
 import AddingPage from './AddingPage';
+import EditPage from './EditPage';
 
 function App() {
  
@@ -28,7 +29,7 @@ function App() {
           <Route  path="/SeriesPage" element={<SeriesPage/>}/>
           <Route  path="/ViewerPage/:idProper" element={<ViewerPage/>}/>
           <Route  path="/AddingPage" element={<AddingPage/>}/>
-          
+          <Route path="/EditPage/:idProper" element={<EditPage/>}/>
             <Route
                path="*"
                element={
