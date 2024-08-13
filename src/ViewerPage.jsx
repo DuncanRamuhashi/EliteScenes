@@ -45,7 +45,7 @@ const ViewerPage = () => {
 
                  <div className='flex flex-row space-x-6'>
                    
-                   <div className='box-content h-32 w-72  border-4  '>
+                   <div className='box-content h-32 w-72  border-4  border-white pt-4 '>
                      <h1 className=' text-sm '>{param.description}</h1>
                    </div>
 
