@@ -17,14 +17,17 @@ import mov15 from './Images/mov15.png'
 import mov16 from './Images/mov16.png'
 import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 const LatestMovies = () => {
   const navigate = useNavigate();
   
+
   const goToMovies = () => {
     navigate('/MoviePage');
   }
-  const goToViewerPage = () => {
-    navigate('/ViewerPage');
+  const goToViewerPage = (idProper)  => {
+    
+    navigate(`/ViewerPage/${idProper}`);
   }
    //scenes listings
    const [sceneList, setSceneList] =  useState([]);
@@ -55,8 +58,11 @@ const LatestMovies = () => {
           {sceneList.map(param => ( 
 
              param.category == "Movies" ? <div className='snap-start flex-shrink-0 ' key={param.id}>
-       
-               <a onClick={goToViewerPage} href=''>
+                 
+               <a onClick={(e) => {
+                e.preventDefault(); // Prevent the default anchor behavior
+                goToViewerPage(param.id); // Pass the id to the function
+            }}href=''> 
                        <img src={param.image} alt='scene' className='w-48 h-64 object-cover' />
                </a> 
 

@@ -26,7 +26,7 @@ function App() {
           
           <Route  path="/MoviePage" element={<MoviePage/>}/>
           <Route  path="/SeriesPage" element={<SeriesPage/>}/>
-          <Route  path="/ViewerPage" element={<ViewerPage/>}/>
+          <Route  path="/ViewerPage/:idProper" element={<ViewerPage/>}/>
           <Route  path="/AddingPage" element={<AddingPage/>}/>
           
             <Route

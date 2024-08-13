@@ -26,9 +26,10 @@ const MoviePage = () => {
     const goToAddPage= () => {
       navigate('/AddingPage');
     }
-    const goToViewerPage = () => {
-        navigate('/ViewerPage');
-      }
+    const goToViewerPage = (idProper)  => {
+    
+      navigate(`/ViewerPage/${idProper}`);
+    }
    //scenes listings
    const [sceneList, setSceneList] =  useState([]);
   
@@ -61,7 +62,10 @@ const MoviePage = () => {
 
               param.category == "Movies" ? <div className='snap-start flex-shrink-0 ' key={param.id}>
                      
-              <a onClick={goToViewerPage} href=''>
+              <a onClick={(e) => {
+                e.preventDefault(); // Prevent the default anchor behavior
+                goToViewerPage(param.id); // Pass the id to the function
+            }} href=''>
                   <img src={param.image} alt='scene' className='w-48 h-64 object-cover' />
              </a> 
             
