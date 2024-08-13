@@ -138,11 +138,14 @@ const AddingPage = () => {
            <div className='flex flex-col  self-center  w-full max-w-lg '>
         <input
         id='year'
+        type='number'
          className='px-4 py-2 ring-2 ring-gray-400 w-80 bg-white rounded-lg placeholder-zinc-400'
           placeholder="2024"
                required
                value={year}      
                onChange={(e) => setYear(e.target.value)}
+               min="1900"
+               max={new Date().getFullYear()} 
              />
          </div>
         </div>
