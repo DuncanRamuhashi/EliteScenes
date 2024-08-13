@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import React from 'react';
 
-const CoverPage  = () =>  {
+const CoverPage  = (Title) =>  {
   const navigate = useNavigate();
   const goToSeries= () => {
     navigate('/SeriesPage');
@@ -52,8 +52,13 @@ const CoverPage  = () =>  {
                             </a>
                         </div>
                     </ul>
+
+    
+  
                 </nav>
+               
             </div>
+           
         </header>
     </div>
 </div>
