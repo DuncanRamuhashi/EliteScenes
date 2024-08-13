@@ -22,31 +22,34 @@ const LatestSeries = () => {
     
     navigate(`/ViewerPage/${idProper}`);
   }
-
+   
 
   //Sceene listings
   const [sceneList, setSceneList] =  useState([]);
-  
+  const [seriesList, setMoviesList] =  useState([]);
     
   useEffect(() => {
   const fetchlist = async () => {
    try {
      const res = await fetch('http://localhost:8000/FakeDB');
      const data = await res.json();
-     setSceneList(data);
+        
+         setSceneList(data);
    } catch (error) {
      console.error('There was an error fetching data', error);
    }
  };
  fetchlist();
 }, [])
-
+        
+    
   return (
     <div className='flex flex-col items-center'>
     <h1 className='pt-14 text-lg text-center'>LATEST SERIES</h1>
 
     <div className='flex flex-col py-2 px-4 sm:px-8 md:px-20 lg:px-52'>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 py-8 justify-items-center'>
+        
             {sceneList.map(param => (
                 param.category === "Series" ? (
                     <div className='snap-start flex-shrink-0' key={param.id}>
