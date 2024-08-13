@@ -44,6 +44,7 @@ const LatestMovies = () => {
       }
     };
     fetchlist();
+   
   }, [])
   return (
     <div className='justify-center   '>
@@ -54,7 +55,7 @@ const LatestMovies = () => {
           <div className='flex  flex-col py-2 px-52'>
           <div className=' flex grid grid-cols-4 gap-y-4  py-8  justify-center  justify-items-center '>
 
-
+            
           {sceneList.map(param => ( 
 
              param.category == "Movies" ? <div className='snap-start flex-shrink-0 ' key={param.id}>

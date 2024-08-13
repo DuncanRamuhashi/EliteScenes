@@ -39,7 +39,7 @@ const ViewerPage = () => {
              </a>
 
            </div><div className='grid'>
-               <h1 className='text-center text-4xl font-semibold'>Ringo Gringo</h1>
+               <h1 className='text-center text-4xl font-semibold'>{param.name}</h1>
                <div className=' flex flex-col space-y-6'>
 
                  <div className='flex flex-row space-x-6'>
