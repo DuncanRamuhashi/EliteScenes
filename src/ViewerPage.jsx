@@ -16,6 +16,7 @@ const ViewerPage = () => {
      try {
        const res = await fetch('http://localhost:8000/FakeDB');
        const data = await res.json();
+       
        setSceneList(data);
      } catch (error) {
        console.error('There was an error fetching data', error);
@@ -43,7 +44,7 @@ const ViewerPage = () => {
                <div className=' flex flex-col space-y-6'>
 
                  <div className='flex flex-row space-x-6'>
-                   <h1 className=' text-xl '>Description: </h1>
+                   
                    <div className='box-content h-32 w-72  border-4  '>
                      <h1 className=' text-sm '>{param.description}</h1>
                    </div>
@@ -51,17 +52,21 @@ const ViewerPage = () => {
 
                  </div>
                  <div className='flex flex-row space-x-6'>
-                   <h1 className=' text-xl '>Country: </h1>
-                   <h1 className=' text-xl '>{param.country}</h1>
+                   <h1 className=' text-base font-bold '>Country: </h1>
+                   <h1 className=' text-base '>{param.country}</h1>
 
                  </div>
 
                  <div className='flex flex-row space-x-6'>
-                   <h1 className=' text-xl '>Year: </h1>
-                   <h1 className=' text-xl '>{param.year}</h1>
+                   <h1 className=' text-base  font-bold'>Year: </h1>
+                   <h1 className=' text-base '>{param.year}</h1>
 
                  </div>
+                 <div className='flex flex-row space-x-6'>
+                   <h1 className=' text-base font-bold '>Type: </h1>
+                   <h1 className=' text-base '>{param.category}</h1>
 
+                 </div>
 
 
                  <div className='space-x-10  '>
