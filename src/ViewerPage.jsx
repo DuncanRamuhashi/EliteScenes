@@ -26,13 +26,13 @@ const ViewerPage = () => {
  }, [])
 
   return (
-    <div className='py-20  flex justify-center justify-items-center'>   
+    <div  className='py-20 flex-col md:flex-row flex justify-center justify-items-center'>   
 
            
        {sceneList.map(param => ( 
 
         param.id == idProper ? 
-        <><div className="snap-start flex-shrink-0  px-20    ">
+        <><div className=" snap-start flex-shrink-0  px-20    ">
              <a>
                <img src={param.image} alt='mov' className='w-80 h-96 object-cover'>
 

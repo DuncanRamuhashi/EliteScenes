@@ -70,7 +70,7 @@ const AddingPage = () => {
 
 
   return (
-<div className='py-20  flex justify-center justify-items-center'>   
+<div className='py-20  flex flex-col md:flex-row justify-center justify-items-center'>   
       <div className="snap-start flex-shrink-0  px-20   ">
     <a >
        <input id='file-upload' type='file' accept='image/*' onChange={handleImageChange}>

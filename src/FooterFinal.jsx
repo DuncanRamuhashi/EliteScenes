@@ -12,33 +12,33 @@ const FooterFinal = () => {
   }
   return (
     <footer>
-    <div className='flex bg-gray-300 h-20 w-screen justify-between items-center px-12'>
-      <div className='py-4'>
-        <a href='/' className=''>
-          <div className='flex hover:bg-purple-500 rounded-lg items-center border-2 border-x-purple-800'>
-            <h1 className='font-bold text-4xl'>Elite</h1>
-            <h1 className='font-bold text-4xl'>Scences</h1>
-          </div>
-        </a>
-      </div>
-  
-      <div className='flex space-x-14 flex-grow justify-center '>
-        <a href='' onClick={goToMovies} className='hover:bg-purple-500 rounded-lg'>
-          MOVIES
-        </a>
-        <a href='' onClick={goToSeries} className='hover:bg-purple-500 rounded-lg'>
-          SERIES
-        </a>
-      </div>
-  
-      <div className='py-4 '>
-        <a href="#" className="">
-          <button className="hover:bg-purple-500 text-black px-4 py-2 rounded-lg">SUBSCRIBE</button>
-        </a>
-      </div>
+    <div className='flex flex-col sm:flex-row bg-gray-300 h-auto w-full justify-between items-center px-4 sm:px-12 py-4'>
+        <div className='py-2'>
+            <a href='/' className=''>
+                <div className='flex hover:bg-purple-500 rounded-lg items-center border-2 border-x-purple-800'>
+                    <h1 className='font-bold text-2xl sm:text-4xl'>Elite</h1>
+                    <h1 className='font-bold text-2xl sm:text-4xl'>Scences</h1>
+                </div>
+            </a>
+        </div>
+
+        <div className='flex space-x-6 sm:space-x-14 flex-grow justify-center   '>
+            <a href='' onClick={goToMovies} className='hover:bg-purple-500 rounded-lg px-2 py-1 sm:px-4 sm:py-2'>
+                MOVIES
+            </a>
+            <a href='' onClick={goToSeries} className='hover:bg-purple-500 rounded-lg px-2 py-1 sm:px-4 sm:py-2'>
+                SERIES
+            </a>
+        </div>
+
+        <div className='py-2 hidden md:block'>
+            <a href="#">
+                <button className="hover:bg-purple-500 text-black px-2 py-1 sm:px-4 sm:py-2 rounded-lg">SUBSCRIBE</button>
+            </a>
+        </div>
     </div>
-  </footer>
-  
+</footer>
+
     
   )
 }

@@ -49,45 +49,31 @@ const MoviePage = () => {
 
 
   return (
-    <div className='justify-center   '>
-      <div className='justify-end justify-items-end flex  pr-20 py-7'>
-       <a className='' onClick={goToAddPage}>
-          <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>ADD</button>
-         </a>
-       </div> 
-      <div className='flex  flex-col py-2 px-52'>
-      <div className=' flex grid grid-cols-4 gap-y-4  py-8  justify-center  justify-items-center '>
+    <div className='flex flex-col items-center'>
+    <div className='flex justify-end w-full px-4 sm:px-8 md:px-20 py-7'>
+        <a onClick={goToAddPage}>
+            <button className='hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center'>ADD</button>
+        </a>
+    </div>
 
-             {sceneList.map(param => ( 
-
-              param.category == "Movies" ? <div className='snap-start flex-shrink-0 ' key={param.id}>
-                     
-              <a onClick={(e) => {
-                e.preventDefault(); // Prevent the default anchor behavior
-                goToViewerPage(param.id); // Pass the id to the function
-            }} href=''>
-                  <img src={param.image} alt='scene' className='w-48 h-64 object-cover' />
-             </a> 
-            
-       </div>: ""
-
-              ))}
-
-
-
-
- 
-
-
-
-
-
-
-    </div> 
-
-         
-      </div>
+    <div className='flex flex-col py-2 px-4 sm:px-8 md:px-12 lg:px-52'>
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 py-8 justify-items-center'>
+            {sceneList.map(param => (
+                param.category === "Movies" ? (
+                    <div className='snap-start flex-shrink-0' key={param.id}>
+                        <a onClick={(e) => {
+                            e.preventDefault(); // Prevent the default anchor behavior
+                            goToViewerPage(param.id); // Pass the id to the function
+                        }} href=''>
+                            <img src={param.image} alt='scene' className='w-48 h-64 object-cover' />
+                        </a>
+                    </div>
+                ) : null
+            ))}
+        </div>
+    </div>
 </div>
+
   )
 }
 
