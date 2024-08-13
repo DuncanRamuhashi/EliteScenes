@@ -51,8 +51,8 @@ const SeriesPage = () => {
 
 
    
-      <div className='flex  flex-col py-2 px-52'>
-      <div className=' flex grid grid-cols-4 gap-y-4  py-8  justify-center  justify-items-center '>
+      <div className='flex  flex-col  py-2 px-52'>
+      <div className=' flex grid grid-cols-4 gap-y-4  py-8   justify-center  justify-items-center '>
    
 
                   {sceneList.map(param => ( 
