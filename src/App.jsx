@@ -11,7 +11,8 @@ import SeriesPage from './SeriesPage';
 import ViewerPage from './ViewerPage';
 import AddingPage from './AddingPage';
 import EditPage from './EditPage';
-
+import 'react-toastify/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 function App() {
  
 

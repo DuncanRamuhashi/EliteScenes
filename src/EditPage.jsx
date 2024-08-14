@@ -2,10 +2,12 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
 const EditPage = () => {
+   
     const [name,setName] = useState('');
     const [description,setDescription] = useState('');
-    const [country,setCountry] = useState('');
+    const [country,setCountry] = useState('')
     const [year,setYear] = useState('');
     const [category,setCategory] = useState('');
     //scenes listings

@@ -2,6 +2,8 @@ import React from 'react';
 import FakeDB  from './FakeDB';
 import { v4 as uuidv4 } from 'uuid'; 
 import  {useState, useEffect} from 'react';
+import { toast } from 'react-toastify';
+import { ToastContainer} from "react-toastify";
 
 const AddingPage = () => {
    const [name,setName] = useState('');
@@ -24,14 +26,14 @@ const AddingPage = () => {
          const reader = new FileReader();
          reader.onloadend = () => {
             setUploadImage(reader.result);
-         
+            toast.success('Adding Successful');
 
             setImage(reader.result);
              
          };
 
          reader.readAsDataURL(file);
-          
+         
       }
    }
 
@@ -54,16 +56,19 @@ const AddingPage = () => {
                  'Content-Type': 'application/json',
              },
              body: JSON.stringify(newData),
+             
          });
- 
+        
          if (!res.ok) {
              throw new Error(`HTTP error! status: ${res.status}`);
          }
- 
+           
          const data = await res.json();
+         
          console.log('Data added successfully:', data);
      } catch (error) {
          console.error('There was an error adding the data:', error);
+         toast.error('Not Added');
      }
       console.log(newData);
    }

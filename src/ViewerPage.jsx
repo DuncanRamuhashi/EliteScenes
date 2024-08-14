@@ -3,6 +3,26 @@ import mov2 from './Images/mov2.png'
 import { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
+
+
+ //delete job 
+
+        
+ const deleteScene =  async (id) => {
+
+  try{
+    const res =  await fetch(`http://localhost:8000/FakeDB?id${id}`,{
+     method: 'DELETE',
+    });
+    
+      return;
+  }catch{
+     window.confirm("Not Deleted");
+  }
+   
+
+};
 const ViewerPage = () => {
    // retrieve id from URL
    const { idProper } = useParams();
@@ -27,7 +47,7 @@ const ViewerPage = () => {
    };
    fetchlist();
  }, [])
-
+          
   return (
     <div  className='py-20 flex-col md:flex-row flex justify-center justify-items-center'>   
 
@@ -76,7 +96,7 @@ const ViewerPage = () => {
                    <a className='' href='' onClick={goToEditPage}>
                      <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>EDIT</button>
                    </a>
-                   <a className='' href='#'>
+                   <a className='' href='' onClick={deleteScene(param.id)} >
                      <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>DELETE</button>
                    </a>
                  </div>

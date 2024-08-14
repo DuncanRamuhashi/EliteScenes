@@ -52,7 +52,7 @@ const LatestMovies = () => {
 
     <div className='flex flex-col py-2 px-4 sm:px-8 md:px-20 lg:px-52'>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 py-8 justify-items-center'>
-            {sceneList.slice(0,9).map(param => (
+            {sceneList.slice(0,8).map(param => (
                 param.category === "Movies" ? (
                     <div className='snap-start flex-shrink-0' key={param.id}>
                         <a onClick={(e) => {
