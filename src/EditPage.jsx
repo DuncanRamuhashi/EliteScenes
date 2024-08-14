@@ -2,7 +2,8 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const EditPage = () => {
    
     const [name,setName] = useState('');
@@ -13,7 +14,9 @@ const EditPage = () => {
     //scenes listings
    const [sceneList, setSceneList] =  useState([]);
    const { idProper } = useParams();
-    
+   const handleClick = () => {
+    toast.success('Adding Successful');
+};
    useEffect(() => {
     const fetchlist = async () => {
       try {
@@ -101,6 +104,8 @@ const EditPage = () => {
     </a>
   </div>
 </div>
+
+
 
             </>
            : ""

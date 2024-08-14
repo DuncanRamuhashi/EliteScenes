@@ -5,6 +5,8 @@ import  {useState, useEffect} from 'react';
 import { toast } from 'react-toastify';
 import { ToastContainer} from "react-toastify";
 
+import 'react-toastify/dist/ReactToastify.css';
+
 const AddingPage = () => {
    const [name,setName] = useState('');
    const [description,setDescription] = useState('');
@@ -21,12 +23,12 @@ const AddingPage = () => {
     
    const handleImageChange = (e) => {
       const file = e.target.files[0];
-     
+      
       if(file) {
          const reader = new FileReader();
          reader.onloadend = () => {
             setUploadImage(reader.result);
-            toast.success('Adding Successful');
+            
 
             setImage(reader.result);
              
@@ -64,7 +66,7 @@ const AddingPage = () => {
          }
            
          const data = await res.json();
-         
+         toast.success('Adding Successful');
          console.log('Data added successfully:', data);
      } catch (error) {
          console.error('There was an error adding the data:', error);
@@ -75,7 +77,8 @@ const AddingPage = () => {
 
 
   return (
-<div className='py-20  flex flex-col md:flex-row justify-center justify-items-center'>   
+<div className='py-20  flex flex-col md:flex-row justify-center justify-items-center'> 
+<ToastContainer />  
       <div className="snap-start flex-shrink-0  px-20   ">
     <a >
        <input id='file-upload' type='file' accept='image/*' onChange={handleImageChange}>
