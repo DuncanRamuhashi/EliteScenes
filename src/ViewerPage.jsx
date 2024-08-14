@@ -73,7 +73,7 @@ const ViewerPage = () => {
 
 
                  <div className='space-x-10  '>
-                   <a className='' href='#' onClick={goToEditPage}>
+                   <a className='' href='' onClick={goToEditPage}>
                      <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>EDIT</button>
                    </a>
                    <a className='' href='#'>
