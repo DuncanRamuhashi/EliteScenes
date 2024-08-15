@@ -1,28 +1,15 @@
 import React from 'react'
 import mov2 from './Images/mov2.png'
 import { useState,useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { redirect, useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { ToastContainer} from "react-toastify";
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
- //delete job 
-
-        
- const deleteScene =  async (id) => {
-
-  try{
-    const res =  await fetch(`http://localhost:8000/FakeDB?id${id}`,{
-     method: 'DELETE',
-    });
-    
-      return;
-  }catch{
-     window.confirm("Not Deleted");
-  }
-   
-
-};
 const ViewerPage = () => {
    // retrieve id from URL
    const { idProper } = useParams();
@@ -43,11 +30,51 @@ const ViewerPage = () => {
        setSceneList(data);
      } catch (error) {
        console.error('There was an error fetching data', error);
+       
      }
    };
    fetchlist();
  }, [])
           
+
+ const deleteScene =  async (id) => {
+
+  
+  //const res =  await fetch(`http://localhost:8000/FakeDB?id${id}`,{
+        console.log('delete',id)
+        try {
+          // Make a DELETE request to the API (adjust the URL as needed)
+          const res = await fetch(`http://localhost:8000/FakeDB/${id}`, {
+            method: 'DELETE',
+          });
+      
+          // Check if the response is ok (status in the range 200-299)
+          if (!res.ok) {
+            throw new Error('Failed to delete the scene');
+          }
+      
+          // Optionally, you could parse the response if needed
+          const data = await res.json();
+          console.log('Delete response:', data);
+          toast.success('Deleted Successfully');
+          // You can also handle any UI updates here after successful deletion
+        } catch (error) {
+          console.error('Error deleting scene:', error);
+          alert('An error occurred while deleting the scene. Please try again.');
+          toast.error('Deleted Successfully');
+        }
+ 
+};
+ // delete helper
+ const onDeleteClick = (e,thisID) => {
+  e.preventDefault(); 
+  const confirm = window.confirm('Are you sure you want to delete this ?')
+
+  if(!confirm ) return;
+  deleteScene(thisID);
+  //onClick={(e) => onDeleteClick(e,param.id)
+    navigate('/#Home');
+ };
   return (
     <div  className='py-20 flex-col md:flex-row flex justify-center justify-items-center'>   
 
@@ -55,7 +82,8 @@ const ViewerPage = () => {
        {sceneList.map(param => ( 
 
         param.id == idProper ? 
-        <><div className=" snap-start flex-shrink-0  px-20    ">
+    
+                   <div key={param.id} className='flex' ><div className=" snap-start flex-shrink-0  px-20    " >
              <a>
                <img src={param.image} alt='mov' className='w-80 h-96 object-cover'>
 
@@ -96,13 +124,16 @@ const ViewerPage = () => {
                    <a className='' href='' onClick={goToEditPage}>
                      <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>EDIT</button>
                    </a>
-                   <a className='' href='' onClick={deleteScene(param.id)} >
+                   <a className='' href='' onClick={(e) => onDeleteClick(e,param.id)}>
                      <button className=' hover:bg-purple-500 text-white px-4 py-2 rounded-full bg-indigo-600 w-20 text-center '>DELETE</button>
                    </a>
                  </div>
                </div>
 
-             </div></>
+             </div>
+             </div>
+       
+       
         : ""
            
          ))}

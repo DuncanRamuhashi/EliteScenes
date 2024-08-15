@@ -56,7 +56,7 @@ const AddingPage = () => {
              method: 'POST',
              headers: {
                  'Content-Type': 'application/json',
-             },
+             }, 
              body: JSON.stringify(newData),
              
          });
@@ -89,7 +89,7 @@ const AddingPage = () => {
          uploadImage && (
             <img src={uploadImage}  alt='Upload Movie Poster' className='w-80 h-96 object-cover text-center bg-gray-400'>
          
-            </img>
+          </img>
          )
        }
        

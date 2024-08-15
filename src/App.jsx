@@ -15,6 +15,9 @@ import 'react-toastify/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 function App() {
  
+      //delete job 
+
+        
 
   return (
     <>
@@ -25,12 +28,12 @@ function App() {
       <Router>
         <section id="Home"><CoverPage/></section>
         <Routes>
-          
+       
           <Route  path="/MoviePage" element={<MoviePage/>}/>
           <Route  path="/SeriesPage" element={<SeriesPage/>}/>
           <Route  path="/ViewerPage/:idProper" element={<ViewerPage/>}/>
           <Route  path="/AddingPage" element={<AddingPage/>}/>
-          <Route path="/EditPage/:idProper" element={<EditPage/>}/>
+          <Route path="/EditPage/:idProper" element={<EditPage />}/>
             <Route
                path="*"
                element={
