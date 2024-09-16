@@ -1,9 +1,13 @@
 import EliteSceneCover from './assets/EliteSceneCover.jpg';
 import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 
-import React from 'react';
 
 const CoverPage  = (Title) =>  {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const toggleMenu = () => {
+      setMenuOpen(!menuOpen);
+    };
   const navigate = useNavigate();
   const goToSeries= () => {
     navigate('/SeriesPage');
@@ -31,8 +35,15 @@ const CoverPage  = (Title) =>  {
                         </h1>
                     </div>
                 </a>
-
-                <nav className='bg-gradient-to-r ps-4 md:ps-20'>
+                <button
+          className="text-white text-2xl md:hidden focus:outline-none"
+          onClick={toggleMenu}
+          aria-expanded={menuOpen}
+          aria-controls="nav-menu"
+        >
+          &#9776;
+        </button>
+                <nav className={`bg-gradient-to-r ps-4 md:ps-20 ${ menuOpen ? 'block' : 'hidden'} md:flex`  }>
                     <ul className='flex flex-col md:flex-row space-x-0 md:space-x-2 items-center justify-between'>
                         <li className='text-white hover:bg-purple-500 px-4 py-2 rounded transition duration-200'>
                             <a href='' onClick={goToMovies} className='hover:underline'>
